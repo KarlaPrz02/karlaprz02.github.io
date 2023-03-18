@@ -1,7 +1,29 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<title>Ejemplo de API con JavaScript</title>
+</head>
 <body>
-<p>Some day i promise xd</p>
-<img src="https://i.pinimg.com/originals/9a/66/5b/9a665b4857e874e9d209590eca151670.jpg" alt="Michi :3">
+	<h1>Información del Bot PluralKit</h1>
+	<p id="pk-info"></p>
+	
+	<script>
+		// Hacer una solicitud de API utilizando AJAX
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				// Convertir la respuesta de la API en un objeto JSON
+				var pkInfo = JSON.parse(this.responseText);
+				
+				// Mostrar la información de la API en la página web
+				document.getElementById("pk-info").innerHTML = "ID del Bot: " + pkInfo.id + "<br>" +
+				"Nombre del Bot: " + pkInfo.name + "<br>" +
+				"Versión del Bot: " + pkInfo.version + "<br>" +
+				"Estado del Bot: " + pkInfo.status;
+			}
+		};
+		xhttp.open("GET", "https://pkapi.dracon.me/v1/bot", true);
+		xhttp.send();
+	</script>
 </body>
 </html>
