@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: url("/images/2023-07-27_16.17.01.png");
+  background-image: url("images/2023-07-27_16.17.01.png");
   background-position: 50% 50%;
 }
 
@@ -90,4 +90,6 @@
   .u-section-1 .u-btn-2 {
     margin-top: -226px;
   }
+}.u-section-2 .u-sheet-1 {
+  min-height: 400px;
 }
