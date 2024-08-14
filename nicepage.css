@@ -43684,12 +43684,19 @@ a.u-link.u-text-hover-grey-90:hover {
   .u-header .u-image-1 {
     width: 68px;
     height: 68px;
-    margin-top: 9px;
-    margin-left: -50px;
+    margin-top: 18px;
+    margin-left: auto;
   }
 
   .u-header .u-menu-1 {
-    margin-top: -23px;
+    margin-top: -32px;
+  }
+
+  .u-header .u-text-1 {
+    width: auto;
+    margin-top: 42px;
+    margin-right: 11px;
+    margin-bottom: 23px;
   }
 }
  .u-footer {
@@ -43697,12 +43704,12 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-footer .u-sheet-1 {
-  min-height: 143px;
+  min-height: 102px;
 }
 
 .u-footer .u-text-1 {
   width: 417px;
-  margin: 49px auto;
+  margin: 20px auto 60px;
 }
 @media (max-width: 1199px) {
   .u-footer .u-sheet-1 {
