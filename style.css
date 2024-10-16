@@ -130,7 +130,7 @@ img {
     inset: var(--border);
 }
 
-.container-hsmp {
+.container-tp {
     background: linear-gradient(90deg, rgba(26, 25, 26, 1) 0%, rgba(26, 25, 26, 0.2) 100%);
 }
 
@@ -220,7 +220,7 @@ h1 {
         border-radius: 44px;
     }
 
-    .hsmp-bg {
+    .tp-bg {
         border-radius: 44px;
     }
 
