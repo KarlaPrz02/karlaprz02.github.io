@@ -1,7 +1,7 @@
 /* General */
 body {
     font-family: "Afacad Flux", sans-serif;
-    background-color: #222222; /* Fondo gris oscuro */
+    background-color: #141414; /* Fondo gris oscuro */
     color: #ffffff;
     text-align: center;
     display: flex;
@@ -27,7 +27,7 @@ body {
     justify-content: center;
 }
 
-/* Estilo para las tarjetas con efecto de "dibujo a mano" */
+/* Estilo para las tarjetas */
 .container-border {
     position: relative;
     background: #1e1e1e;
@@ -39,12 +39,30 @@ body {
     /* Efecto de borde dibujado a mano */
     border: 3px solid black;
     filter: drop-shadow(2px 2px 0px black) drop-shadow(-2px -2px 0px black);
+
+    /* Asegura alineación correcta */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espaciado entre los elementos */
 }
 
 /* Títulos dentro de las tarjetas */
-.card-content h1 {
+.container-border h1 {
     font-size: 24px;
-    margin-bottom: 5px;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+.h2-bg {
+    background-image: url("/resources/tp2.png");
+    background-size: cover;
+    border-radius: 18px;
+    z-index: 1;
+    position: absolute;
+    padding: 0 1rem 0 2rem;
+    inset: var(--border);
+    opacity: 0.5;
 }
 
 /* Social Media Icons */
@@ -67,7 +85,7 @@ body {
 
 /* Íconos de redes sociales (rojos) */
 .social-btn i {
-    color: #ff0000; /* Rojo */
+    color: #bebebe; /* Rojo */
     font-size: 32px;
 }
 
@@ -92,4 +110,16 @@ a:hover {
         width: 90%;
     }
 }
+
+/* Asegurar alineación correcta de los enlaces dentro de las cajas */
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+}
+
+
+
 
