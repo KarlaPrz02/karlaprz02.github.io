@@ -120,6 +120,12 @@ a:hover {
     width: 100%;
 }
 
+.kat2-img {
+    width: 150px; /* Ajusta el tamaño según necesites */
+    height: auto; /* Mantiene la proporción */
+}
+
+
 
 
 
