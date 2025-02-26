@@ -31,7 +31,10 @@
                 <a class="center" href="https://www.youtube.com/watch?v=oCppUTwOcTk" target="_blank" style="margin-right: 10px;">
                     <img src="resources/kat2.png" class="kat2-img">                
                 </a>
-                <span class="kat-title">Kat's epic website</span>
+                <a href="#" class="kat-title" id="random-link">
+                    Kat's epic website
+                </a>
+                
             </div>
 
             <div class="center social-buttons">
@@ -80,10 +83,55 @@
                     </a>
                 </div>
             </div>
+
+            <a href="https://www.youtube.com/watch?v=oxzEdm29JLw" class="graphic-design-link" target="_blank">
+                Web design is my passion
+            </a>
+
+            <script src="./script.js"></script>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    let links = [
+                        "https://www.youtube.com/watch?v=j_ACfKvS3BY",
+                        "https://www.youtube.com/watch?v=TO0zqOtYKtM",
+                        "https://www.youtube.com/watch?v=M_gsx0pw2yw",
+                        "https://www.youtube.com/watch?v=Qrxuw6-fd_E",
+                        "https://www.youtube.com/watch?v=nRrkeUJxJRE",
+                        "https://www.youtube.com/watch?v=hjGZLnja1o8",
+                        "https://www.youtube.com/watch?v=6y608DRBDew",
+                        "https://www.youtube.com/watch?v=Z-EAVUGEqQw",
+                        "https://www.youtube.com/watch?v=cyW2ajAVyfA",
+                        "https://www.youtube.com/watch?v=O6NvsM49N6w",
+                        "https://www.youtube.com/watch?v=RF5_XKF0L7k",
+                        "https://www.youtube.com/watch?v=cfQ9aR7Dls8",
+                        "https://www.youtube.com/watch?v=NhndeYcXRHA",
+                        "https://www.youtube.com/watch?v=jaJ7iVnpr6M",
+                        "https://www.youtube.com/watch?v=baBVGXfOBXA",
+                        "https://www.youtube.com/watch?v=2Ll2QVwPC2c",
+                        "https://www.youtube.com/watch?v=hrTgEymnoOY",
+                        "https://www.youtube.com/watch?v=tdP9zOwkTAk",
+                        
+                    ];
+    
+                    let titleLink = document.getElementById("random-link");
+    
+                    if (titleLink) {
+                        titleLink.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            let randomUrl = links[Math.floor(Math.random() * links.length)];
+                            window.open(randomUrl, "_blank");
+                        });
+                    } else {
+                        console.error("Element with id 'random-link' not found.");
+                    }
+                });
+            </script>
+    
+            
             
 
 
-            <script>feather.replace()</script>
-            <script src="./script.js"></script>
+
         </body>
 </html>

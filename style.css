@@ -52,7 +52,7 @@ body {
     font-size: 24px;
     margin: 0;
     text-align: center;
-    color: white;
+    color: rgb(194, 192, 192);
 }
 .h2-bg {
     background-image: url("/resources/tp2.png");
@@ -84,8 +84,8 @@ body {
 }
 
 .social-btn i {
-    color: #bebebe; /* Rojo */
-    font-size: 32px;
+    color: #bebebe;
+    font-size: 32px;;
 }
 
 /* Estilo para los enlaces */
@@ -104,19 +104,43 @@ a:hover {
 }
 
 /* Ajuste para móviles */
-@media (max-width: 600px) {
-    .container-border {
-        width: 90%;
+@media (pointer:none), (pointer:coarse) {
+    :root {
+        --width: 700px;
+        --height: 400px;
+        --border: 4px;
+    }
+
+    body {
+        font-size: 50px;
+        padding-top: 80px;
+    }
+
+    .containers {
+        flex-direction: column;
+    }
+
+    .card-content {
+        padding-left: 70px;
+    }
+
+    .version-badge {
+        font-size: 25px;
+        padding: 5px 10px;
     }
 }
 
 .link {
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin: 2px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.678);
+    transition: 0.2s;
     gap: 5px;
-    width: 100%;
+    text-decoration: none;
 }
+
 
 .kat2-img {
     width: 140px !important; 
@@ -125,8 +149,11 @@ a:hover {
 
 .kat-title {
     font-weight: bold;
-    color: rgb(255, 105, 180);
-    font-size: 34px;
+    font-size: 50px;
+    color: rgba(204, 48, 235, 0.6);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .version-badge {
@@ -140,6 +167,26 @@ a:hover {
     margin-right: 5px;
     text-transform: uppercase;
 }
+
+.card:hover > .container-border::after {
+    opacity: 1;
+}
+
+.graphic-design-link {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.graphic-design-link:hover {
+    color: white;
+}
+
+
 
 
 
