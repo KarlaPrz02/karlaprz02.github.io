@@ -83,7 +83,6 @@ body {
     height: 40px;
 }
 
-/* Íconos de redes sociales (rojos) */
 .social-btn i {
     color: #bebebe; /* Rojo */
     font-size: 32px;
@@ -91,7 +90,7 @@ body {
 
 /* Estilo para los enlaces */
 a {
-    color: #a855f7; /* Morado */
+    color: #a855f7; 
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
@@ -104,14 +103,13 @@ a:hover {
     color: #d977f7;
 }
 
-/* Ajuste para dispositivos móviles */
+/* Ajuste para móviles */
 @media (max-width: 600px) {
     .container-border {
         width: 90%;
     }
 }
 
-/* Asegurar alineación correcta de los enlaces dentro de las cajas */
 .link {
     display: flex;
     align-items: center;
@@ -130,6 +128,19 @@ a:hover {
     color: rgb(255, 105, 180);
     font-size: 34px;
 }
+
+.version-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #bebebe; 
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
 
 
 /*Gracias por tanto chatgpt*/
