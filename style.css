@@ -30,14 +30,14 @@ body {
 /* Estilo para las tarjetas */
 .container-border {
     position: relative;
-    background: #1e1e1e;
+    background: #1f1f1f;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
     margin: 10px;
     
     /* Efecto de borde dibujado a mano */
-    border: 3px solid black;
+    border: 3px solid rgb(0, 0, 0);
     filter: drop-shadow(2px 2px 0px black) drop-shadow(-2px -2px 0px black);
 
     /* Asegura alineación correcta */
@@ -124,6 +124,8 @@ a:hover {
     width: 150px; /* Ajusta el tamaño según necesites */
     height: auto; /* Mantiene la proporción */
 }
+
+/*Gracias por tanto chatgpt*/
 
 
 
