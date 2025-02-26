@@ -121,9 +121,16 @@ a:hover {
 }
 
 .kat2-img {
-    width: 150px; /* Ajusta el tamaño según necesites */
-    height: auto; /* Mantiene la proporción */
+    width: 140px !important; 
+    height: auto !important; 
 }
+
+.kat-title {
+    font-weight: bold;
+    color: rgb(255, 105, 180);
+    font-size: 34px;
+}
+
 
 /*Gracias por tanto chatgpt*/
 
