@@ -135,11 +135,11 @@ img {
     inset: var(--border);
 }
 
-.container-tp2 {
+.container-tp {
     background: linear-gradient(90deg, rgba(26, 25, 26, 1) 0%, rgba(26, 25, 26, 0.2) 100%);
 }
 
-.tp2-bg {
+.tp-bg {
     background-image: url("/resources/tp2.png");
     background-size: cover;
     border-radius: 18px;
