@@ -97,6 +97,7 @@ img {
     position: absolute;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .container-border::before,
@@ -108,23 +109,25 @@ img {
     height: 100%;
     width: 100%;
     border-radius: inherit;
-    background: radial-gradient(
-        800px circle at var(--x-px) var(--y-px),
-        rgba(47, 32, 66, 0.347) 0%, rgba(255, 110, 221, 0.084) var(--gradient-1-size), rgba(216, 87, 255, 0) var(--gradient-2-size),
-        transparent 40%
-    );
+    background: url('....') no-repeat center center;
+    background-size: cover;
+    transition: opacity 0.4s ease;
 }
 
 .container-border::before {
     z-index: 0;
+    opacity: 0;
 }
 
 .container-border::after {
-    opacity: 0;
     z-index: 1;
-    transition: opacity 0.4s ease;
+    opacity: 1;
+    background: radial-gradient(circle at var(--x-px) var(--y-px), transparent 0%, transparent 20%, rgba(0, 0, 0, 0.8) 100%);
 }
 
+.card:hover > .container-border::before {
+    opacity: 1;
+}
 
 .container {
     background: var(--container);
@@ -226,6 +229,49 @@ h1 {
     opacity: 1;
 }
 
+.container-de-tecnic {
+    --x-px: calc(var(--x) * 1px);
+    --y-px: calc(var(--y) * 1px);
+    background: var(--container-border);
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container-de-tecnic::before,
+.container-de-tecnic::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    background: url("resources/tp2.png") no-repeat center center;
+    background-size: cover;
+    transition: opacity 0.4s ease;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--container-border);
+}
+
+.container-de-tecnic::before {
+    z-index: 0;
+    opacity: 0;
+}
+
+.container-de-tecnic::after {
+    z-index: 1;
+    opacity: 1;
+    background: radial-gradient(circle at var(--x-px) var(--y-px), transparent 0%, transparent 20%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.card:hover > .container-de-tecnic::before {
+    opacity: 1;
+}
+
 /* Ajustes para móviles */
 @media screen and (max-width: 768px) {
     body {
@@ -278,7 +324,8 @@ h1 {
 
     .container-border {
         border: 2px solid rgb(0, 0, 0); /* Se reduce el grosor del borde */
-        filter: drop-shadow(1.5px 1.5px 0px black) drop-shadow(-1.5px -1.5px 0px black); /* Sombras más sutiles */
+        border-color: var(--container-border);
+        /*filter: drop-shadow(1.5px 1.5px 0px black) drop-shadow(-1.5px -1.5px 0px black); /* Sombras más sutiles */
         padding: 12px; /* Ligero ajuste en el padding */
     }
 
@@ -305,8 +352,3 @@ h1 {
 
 
 /*Gracias por tanto chatgpt*/
-
-
-
-
-
