@@ -3,7 +3,6 @@ const featuresEl = document.body;
 const featureEls = document.querySelectorAll(".container-border");
 
 featuresEl.addEventListener("mousemove", (ev) => {
-  console.log(ev)
   if (!ev.sourceCapabilities.firesTouchEvents) {
     featureEls.forEach((featureEl) => {
       const rect = featureEl.getBoundingClientRect();
