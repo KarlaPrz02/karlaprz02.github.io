@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ranking Wordle</title>
+<style>
+body {
+    background-color: #151515;;
+    color: #eee;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    margin-bottom: 1rem;
+    color: #7289da;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    background: #23272a;
+    border-radius: 6px;
+    overflow: hidden;
+}
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+th {
+    background-color: #40444b;
+    font-weight: 600;
+}
+tr:nth-child(even) {
+    background-color: #2f3136;
+}
+tr:hover {
+    background-color: #393c43;
+}
+caption {
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Botón arriba a la izquierda */
+.btn-top-left {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background-color: #3a3d42;
+    color: #eee;
+    border: 1.5px solid #5a5d63;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+    user-select: none;
+    z-index: 1000;
+}
+.btn-top-left:hover {
+    background-color: #4e5157;
+    border-color: #7289da;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+<a href="https://karlaprz02.github.io" class="btn-top-left">Volver</a>
+
+<h1>🏆 Ranking Wordle - Top 10 Jugadores</h1>
+<table>
+    <caption>Victorias y Derrotas</caption>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Usuario</th>
+        <th>Victorias</th>
+        <th>Derrotas</th>
+    </tr>
+    </thead>
+    <tbody id="ranking-body">
+    <tr><td colspan="4" style="text-align:center;">Cargando...</td></tr>
+    </tbody>
+</table>
+
+<script>
+    async function cargarRanking() {
+    try {
+        const response = await fetch('stats.json');
+        if (!response.ok) throw new Error('No se pudo cargar stats.json');
+        const data = await response.json();
+
+        const rankingBody = document.getElementById('ranking-body');
+        rankingBody.innerHTML = '';
+
+        // Convertir a array y ordenar victorias desc, derrotas asc
+        const ranking = Object.entries(data)
+        .sort(([, a], [, b]) => b.victorias - a.victorias || a.derrotas - b.derrotas)
+        .slice(0, 10);
+
+        if (ranking.length === 0) {
+        rankingBody.innerHTML = '<tr><td colspan="4" style="text-align:center;">No hay estadísticas disponibles.</td></tr>';
+        return;
+        }
+
+        ranking.forEach(([userId, stats], i) => {
+        const tr = document.createElement('tr');
+
+        const rankTd = document.createElement('td');
+        rankTd.textContent = i + 1;
+
+        const userTd = document.createElement('td');
+        userTd.textContent = `Usuario ${userId}`;
+
+        const winsTd = document.createElement('td');
+        winsTd.textContent = stats.victorias ?? 0;
+
+        const losesTd = document.createElement('td');
+        losesTd.textContent = stats.derrotas ?? 0;
+
+        tr.appendChild(rankTd);
+        tr.appendChild(userTd);
+        tr.appendChild(winsTd);
+        tr.appendChild(losesTd);
+
+        rankingBody.appendChild(tr);
+        });
+
+    } catch (error) {
+        const rankingBody = document.getElementById('ranking-body');
+        rankingBody.innerHTML = `<tr><td colspan="4" style="text-align:center;">Error al cargar las estadísticas.</td></tr>`;
+        console.error(error);
+    }
+    }
+
+    cargarRanking();
+</script>
+</body>
+</html>
+
