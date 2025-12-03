@@ -138,12 +138,23 @@ img {
     inset: var(--border);
 }
 
-.container-tp {
+.container-tp, .container-art {
     background: linear-gradient(90deg, rgba(26, 25, 26, 1) 0%, rgba(26, 25, 26, 0.2) 100%);
 }
 
 .tp-bg {
     background-image: url("/resources/tp2.png");
+    background-size: cover;
+    border-radius: 18px;
+    z-index: 1;
+    position: absolute;
+    padding: 0 1rem 0 2rem;
+    inset: var(--border);
+    opacity: 0.5;
+}
+
+.art-bg {
+    background-image: url("/resources/stocking.png");
     background-size: cover;
     border-radius: 18px;
     z-index: 1;
@@ -268,7 +279,46 @@ h1 {
     background: radial-gradient(circle at var(--x-px) var(--y-px), transparent 0%, transparent 20%, rgba(0, 0, 0, 0.8) 100%);
 }
 
-.card:hover > .container-de-tecnic::before {
+.container-de-art {
+    --x-px: calc(var(--x) * 1px);
+    --y-px: calc(var(--y) * 1px);
+    background: var(--container-border);
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container-de-art::before,
+.container-de-art::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    background: url("resources/stocking.png") no-repeat center center;
+    background-size: cover;
+    transition: opacity 0.4s ease;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--container-border);
+}
+
+.container-de-art::before {
+    z-index: 0;
+    opacity: 0;
+}
+
+.container-de-art::after {
+    z-index: 1;
+    opacity: 1;
+    background: radial-gradient(circle at var(--x-px) var(--y-px), transparent 0%, transparent 20%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.card:hover > .container-de-art::before {
     opacity: 1;
 }
 
