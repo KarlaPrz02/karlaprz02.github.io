@@ -154,7 +154,7 @@ img {
 }
 
 .art-bg {
-    background-image: url("/resources/stocking.png");
+
     background-size: cover;
     border-radius: 18px;
     z-index: 1;
