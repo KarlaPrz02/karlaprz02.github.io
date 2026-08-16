@@ -1,13 +1,17 @@
 :root {
-    --bg: #151515;
+    --bg: #0c090d;
     --primary: white;
-    --container: rgba(26, 25, 26, 0.9);
-    --container-border: rgb(42, 41, 42);
+    --container: rgba(22, 18, 24, 0.9);
+    --container-border: rgba(44, 36, 49, 0.9);
     --width: 400px;
     --height: 250px;
     --border: 2px;
     --gradient-1-size: 25%;
     --gradient-2-size: 50%;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -212,6 +216,7 @@ h1 {
 }
 
 .kat-title {
+    font-family: "Cinzel", serif;
     font-weight: bold;
     font-size: 50px;
     color: rgba(204, 48, 235, 0.6);
@@ -222,6 +227,71 @@ h1 {
 
 .kat-title:hover {
     color: rgba(200, 114, 218, 0.6);
+}
+
+.header-top {
+    gap: 14px;
+    justify-content: center;
+    margin-left: -20px;
+}
+
+.title-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.about-me-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 16px;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    /* NUEVO */
+    align-self: flex-start;
+    margin-left: 175px; /* ajusta este valor */
+    margin-top: 10px;   /* ajusta este valor */
+}
+}
+
+.about-me-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.about-me-section {
+    width: min(680px, calc(100% - 40px));
+    margin: 0 auto 30px;
+    padding: 20px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    scroll-margin-top: 24px;
+}
+
+.about-me-section h2 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    color: white;
+}
+
+.about-me-section p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .version-badge {
