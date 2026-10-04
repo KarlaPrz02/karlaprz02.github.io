@@ -243,55 +243,40 @@ h1 {
     text-align: center;
 }
 
-.about-me-btn {
-    display: inline-flex;
+.about-me-button-wrap {
+    width: min(220px, calc(100% - 40px));
+    height: 58px;
+    margin: -18px auto 28px;
+}
+
+.about-me-frame::before {
+    background-image: url("resources/aboutme.png");
+    border: 2px solid var(--container-border);
+    opacity: 0;
+}
+
+.about-me-button-wrap:hover > .about-me-frame::before {
+    opacity: 1;
+}
+
+.about-me-button {
+    display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 8px 16px;
-    border-radius: 999px;
-
-    background: rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.85);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-
-    /* NUEVO */
-    align-self: flex-start;
-    margin-left: 175px; /* ajusta este valor */
-    margin-top: 10px;   /* ajusta este valor */
-}
-}
-
-.about-me-btn:hover {
-    background: rgba(255, 255, 255, 0.16);
-    color: white;
-    transform: translateY(-1px);
-}
-
-.about-me-section {
-    width: min(680px, calc(100% - 40px));
-    margin: 0 auto 30px;
-    padding: 20px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.04);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    scroll-margin-top: 24px;
-}
-
-.about-me-section h2 {
-    margin: 0 0 10px;
-    font-size: 22px;
-    color: white;
-}
-
-.about-me-section p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
     color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.about-me-button:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 .version-badge {
